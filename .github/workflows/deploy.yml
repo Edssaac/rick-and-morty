@@ -26,7 +26,9 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build
+        run: |
+          echo "API_BASE_URL=${{ secrets.API_BASE_URL }}" >> $GITHUB_ENV
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
