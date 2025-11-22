@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import { BaseModal } from '~/components/ui'
-import { MapPin, Cube, Smiley } from '~/components/icons'
+import { Heart, MapPin, Cube, Smiley } from '~/components/icons'
 
 const props = defineProps({
     id: {
@@ -32,8 +32,9 @@ onMounted(async () => {
         <div v-if="isLoading" class="text-center animate-bounce">Carregando...</div>
 
         <div v-else-if="location.id" class="flex flex-col gap-6">
-            <div>
+            <div class="flex flex-wrap items-center gap-4">
                 <p class="text-5xl leading-[55px] font-bold">{{ location.name }}</p>
+                <Heart :size="56" class="flex-[0_0_56px]" />
             </div>
 
             <div class="flex gap-6">
