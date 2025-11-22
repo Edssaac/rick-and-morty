@@ -1,19 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
 
   nitro: {
-    preset: 'github_pages'
+    preset: 'vercel'
   },
 
   app: {
-    baseURL: '/rick-and-morty/',
     head: {
       title: 'Rick and Morty Data',
       link: [{
         rel: 'icon',
         type: 'image/svg+xml',
-        href: '/rick-and-morty/favicon.svg'
+        href: '/favicon.svg'
       }],
     },
   },
