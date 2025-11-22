@@ -10,7 +10,7 @@ import { PageContainer } from '~/components/ui'
         <PageContainer class="flex flex-col px-4">
             <div class="py-10 flex justify-between items-center ">
                 <NuxtLink to="/">
-                    <NuxtImg src="rick-and-morty-logo.svg" width="190" />
+                    <img src="/assets/images/rick-and-morty-logo.svg" width="190" />
                 </NuxtLink>
 
                 <NuxtLink 

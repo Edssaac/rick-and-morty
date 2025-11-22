@@ -17,7 +17,7 @@ const scrollToTop = (): void => {
         <PageContainer class="flex flex-col px-4">
             <div class="py-20 flex justify-between items-center ">
                 <NuxtLink to="/">
-                    <NuxtImg src="rick-and-morty-logo.svg" width="164" />
+                    <img src="/assets/images/rick-and-morty-logo.svg" width="164" />
                 </NuxtLink>
 
                 <NuxtLink class="flex gap-2 items-center">

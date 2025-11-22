@@ -26,7 +26,7 @@ import { DarkMode, BrightMode } from '~/components/ui/buttons'
                     <p class="text-[#11B0C8] block dark:hidden">Wubba Lubba Dub Dub! Cuidado com os olhos.</p>
                 </div>
 
-                <NuxtImg src="rick-and-morty.png" class="hidden lg:block w-[435px] dark:lg:hidden" />
+                <img src="/assets/images/rick-and-morty.png" class="hidden lg:block w-[435px] dark:lg:hidden" />
             </div>
         </PageContainer>
 

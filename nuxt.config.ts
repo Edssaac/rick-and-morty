@@ -20,7 +20,8 @@ export default defineNuxtConfig({
   css: ['assets/css/global.css'],
 
   image: {
-    dir: 'assets/images'
+    dir: 'assets/images',
+    inject: false
   },
 
   compatibilityDate: '2025-07-15',
