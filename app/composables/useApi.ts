@@ -31,12 +31,16 @@ export const useApi = <T extends object>(service: ApiService<T>, Entity: new () 
         }
     }
 
-    const fetchHome = async () => {
+    const fetchSelection = async (selection?: number[]) => {
         isLoading.value = true
         error.value = null
 
+        if (selection === undefined) {
+            selection = [...Array(8)].map((_, i) => i + 1)
+        }
+
         try {
-            const response = await service.shortedList([...Array(8)].map((_, i) => i + 1))
+            const response = await service.shortedList(selection)
 
             Object.assign(items.results, response)
         } catch (errorMessage) {
@@ -68,7 +72,7 @@ export const useApi = <T extends object>(service: ApiService<T>, Entity: new () 
         error,
 
         fetchAll,
-        fetchHome,
+        fetchSelection,
         fetchOne,
     }
 }

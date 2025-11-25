@@ -14,9 +14,19 @@ const props = defineProps({
     }
 })
 
+const reload = ref(false)
+
+const setReload = () => {
+    reload.value = true
+}
+
 const emit = defineEmits(["update:modelValue"])
 const close = () => {
     emit("update:modelValue", false)
+
+    if (reload.value) {
+        window.location.reload()
+    }
 }
 
 const { fetchOne, item: character, isLoading } = useCharacters()
@@ -24,6 +34,11 @@ const { fetchOne, item: character, isLoading } = useCharacters()
 onMounted(async () => {
     await fetchOne(props.id)
 })
+
+const {
+    isFavorited,
+    toggleFavorite
+} = useFavorites()
 
 </script>
 
@@ -37,7 +52,12 @@ onMounted(async () => {
             <div class="flex flex-col gap-8">
                 <div class="flex flex-wrap items-center gap-4">
                     <h1 class="text-5xl leading-[55px] font-bold">{{ character.name }}</h1>
-                    <Heart :size="56" class="flex-[0_0_56px]" />
+                    <Heart 
+                        :size="56" 
+                        :is-filled="isFavorited('characters', Number(character.id))"
+                        @click="toggleFavorite('characters', Number(character.id)), setReload()" 
+                        class="flex-[0_0_56px]" 
+                    />
                 </div>
 
                 <p class="flex items-center gap-2">

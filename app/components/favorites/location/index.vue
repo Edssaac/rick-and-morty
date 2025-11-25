@@ -9,13 +9,19 @@ const {
     isLoading
 } = useLocations()
 
-fetchSelection()
+const {
+    getFavorites
+} = useFavorites()
+
+onMounted(() => {
+    fetchSelection(getFavorites('locations'))
+})
 
 </script>
 
 <template>
     <section class="flex flex-wrap justify-center xl:justify-start gap-4 py-4">
-        <TopicHeader title="Localizações" action-url="/locations" />
+        <TopicHeader title="Localizações" action-url="/locations" :see-all="false" />
 
         <div v-if="isLoading" class="w-full text-center animate-bounce">
             Carregando...

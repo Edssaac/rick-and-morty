@@ -19,6 +19,11 @@ const openDetails = (id: string) => {
     open.value = true
 }
 
+const {
+    isFavorited,
+    toggleFavorite
+} = useFavorites()
+
 </script>
 
 <template>
@@ -30,7 +35,10 @@ const openDetails = (id: string) => {
                 <p class="tetx-base font-bold">{{ character.name }}</p>
 
                 <span>
-                    <Heart />
+                    <Heart 
+                        :is-filled="isFavorited('characters', Number(character.id))"
+                        @click="toggleFavorite('characters', Number(character.id))" 
+                    />
                 </span>
             </div>
 

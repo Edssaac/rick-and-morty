@@ -19,6 +19,11 @@ const openDetails = (id: string) => {
     open.value = true
 }
 
+const {
+    isFavorited,
+    toggleFavorite
+} = useFavorites()
+
 </script>
 
 <template>
@@ -36,7 +41,11 @@ const openDetails = (id: string) => {
                 <Details @click="openDetails(String(location.id))" />
             </div>
 
-            <Heart :size="32" />
+            <Heart 
+                :size="32" 
+                :is-filled="isFavorited('locations', Number(location.id))"
+                @click="toggleFavorite('locations', Number(location.id))" 
+            />
         </div>
     </Card>
 

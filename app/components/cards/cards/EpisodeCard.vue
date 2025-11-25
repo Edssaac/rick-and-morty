@@ -19,6 +19,11 @@ const openDetails = (id: string) => {
     open.value = true
 }
 
+const {
+    isFavorited,
+    toggleFavorite
+} = useFavorites()
+
 </script>
 
 <template>
@@ -30,7 +35,11 @@ const openDetails = (id: string) => {
         <div class="flex flex-row justify-between">
             <Details @click="openDetails(String(episode.id))" />
 
-            <Heart :size="32" />
+            <Heart 
+                :size="32" 
+                :is-filled="isFavorited('episodes', Number(episode.id))"
+                @click="toggleFavorite('episodes', Number(episode.id))" 
+            />
         </div>
     </Card>
 

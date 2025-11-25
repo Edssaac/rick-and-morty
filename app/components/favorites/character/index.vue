@@ -9,13 +9,19 @@ const {
     isLoading
 } = useCharacters()
 
-fetchSelection()
+const {
+    getFavorites
+} = useFavorites()
+
+onMounted(() => {
+    fetchSelection(getFavorites('characters'))
+})
 
 </script>
 
 <template>
     <section class="flex flex-wrap justify-center xl:justify-start gap-4 py-4">
-        <TopicHeader title="Personagens" action-url="/characters" />
+        <TopicHeader title="Personagens" action-url="/characters" :see-all="false" />
 
         <div v-if="isLoading" class="w-full text-center animate-bounce">
             Carregando...
