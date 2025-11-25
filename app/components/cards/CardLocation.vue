@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { Heart, MapPin } from '~/components/icons'
+import { Heart, MapPin } from '~/components/ui/icons'
 import { Details } from '~/components/ui/buttons'
 import { Card } from '~/components/ui'
 import { LocationDetailing } from '~/components/detailing'

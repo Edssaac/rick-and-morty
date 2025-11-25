@@ -1,7 +1,11 @@
 <script setup lang="ts">
 
 import { Pagination } from '~/components/ui'
-import LocationCard from '~/components/cards/cards/LocationCard.vue'
+import { LocationCard } from '~/components/cards'
+
+useHead({
+    title: 'Localizações'
+})
 
 const { 
     fetchAll, 

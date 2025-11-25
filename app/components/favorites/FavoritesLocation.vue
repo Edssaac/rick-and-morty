@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import { TopicHeader } from '~/components/ui'
-import LocationCard from '~/components/cards/cards/LocationCard.vue'
+import { LocationCard } from '~/components/cards'
 
 const { 
     fetchSelection, 

@@ -1,7 +1,11 @@
 <script setup lang="ts">
 
 import { Pagination } from '~/components/ui'
-import EpisodeCard from '~/components/cards/cards/EpisodeCard.vue'
+import { EpisodeCard } from '~/components/cards'
+
+useHead({
+    title: 'Episódios'
+})
 
 const { 
     fetchAll, 

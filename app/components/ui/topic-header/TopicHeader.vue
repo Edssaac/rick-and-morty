@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { Square } from '~/components/icons'
+import { Square } from '~/components/ui/icons'
 
 const props = defineProps({
     title: String,

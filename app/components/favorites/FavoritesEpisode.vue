@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import { TopicHeader } from '~/components/ui'
-import EpisodeCard from '~/components/cards/cards/EpisodeCard.vue'
+import { EpisodeCard } from '~/components/cards'
 
 const { 
     fetchSelection, 

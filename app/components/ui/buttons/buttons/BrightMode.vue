@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { Sun } from '~/components/icons'
+import { Sun } from '~/components/ui/icons'
 
 const colorMode = useColorMode()
 

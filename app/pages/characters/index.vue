@@ -1,7 +1,11 @@
 <script setup lang="ts">
 
 import { Pagination } from '~/components/ui'
-import CharacterCard from '~/components/cards/cards/CharacterCard.vue'
+import { CharacterCard } from '~/components/cards'
+
+useHead({
+    title: 'Personagens'
+})
 
 const {
     fetchAll,

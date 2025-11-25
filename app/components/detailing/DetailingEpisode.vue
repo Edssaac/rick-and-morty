@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import { BaseModal } from '~/components/ui'
-import { Heart, MapPin, Cube, Smiley } from '~/components/icons'
+import { Play, Heart, Calendar, Queue, Smiley } from '~/components/ui/icons'
 
 const props = defineProps({
     id: {
@@ -29,10 +29,25 @@ const close = () => {
     }
 }
 
-const { fetchOne, item: location, isLoading } = useLocations()
+const { fetchOne, item: episode, isLoading } = useEpisodes()
+
+const episodeCreatedDate = ref('')
 
 onMounted(async () => {
     await fetchOne(props.id)
+
+    const date = new Date(episode.created || '')
+
+    const usFormatter = new Intl.DateTimeFormat('pt-BR', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'UTC'
+    })
+
+    if (date) {
+        episodeCreatedDate.value = usFormatter.format(date)
+    }
 })
 
 const {
@@ -46,32 +61,34 @@ const {
     <BaseModal :model-value="modelValue" @update:modelValue="close">
         <div v-if="isLoading" class="text-center animate-bounce">Carregando...</div>
 
-        <div v-else-if="location.id" class="flex flex-col gap-6">
+        <div v-else-if="episode.id" class="flex flex-col gap-6">
+            <Play :size="72" />
+
             <div class="flex flex-wrap items-center gap-4">
-                <p class="text-5xl leading-[55px] font-bold">{{ location.name }}</p>
+                <p class="text-5xl leading-[55px] font-bold">{{ episode.name }}</p>
                 <Heart 
                     :size="56" 
-                    :is-filled="isFavorited('locations', Number(location.id))"
-                    @click="toggleFavorite('locations', Number(location.id)), setReload()" 
+                    :is-filled="isFavorited('episodes', Number(episode.id))"
+                    @click="toggleFavorite('episodes', Number(episode.id)), setReload()" 
                     class="flex-[0_0_56px]" 
                 />
             </div>
 
             <div class="flex gap-6">
                 <div class="flex items-center gap-2">
-                    <MapPin :size="32" />
-                    {{ location.type }}
+                    <Calendar />
+                    {{ episodeCreatedDate }}
                 </div>
 
                 <div class="flex items-center gap-2">
-                    <Cube />
-                    {{ location.dimension }}
+                    <Queue />
+                    {{ episode.episode }}
                 </div>
             </div>
 
             <div class="flex items-center gap-2 mt-8">
                 <Smiley />
-                {{ location.residents?.length }} Personagens localizados aqui.
+                {{ episode.characters?.length }} Personagens participaram deste episódio.
             </div>
         </div>
 

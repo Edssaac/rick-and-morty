@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { ArrowCircleUp, Code } from '~/components/icons'
+import { ArrowCircleUp, Code } from '~/components/ui/icons'
 import { PageContainer } from '~/components/ui'
 
 const scrollToTop = (): void => {

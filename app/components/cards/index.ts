@@ -1,6 +1,6 @@
-import { default as CharacterCard } from './cards/CharacterCard.vue'
-import { default as EpisodeCard } from './cards/EpisodeCard.vue'
-import { default as LocationCard } from './cards/LocationCard.vue'
+import { default as CharacterCard } from './CardCharacter.vue'
+import { default as EpisodeCard } from './CardEpisode.vue'
+import { default as LocationCard } from './CardLocation.vue'
 
 export {
     CharacterCard,

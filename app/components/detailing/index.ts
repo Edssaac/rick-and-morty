@@ -1,6 +1,6 @@
-import { default as CharacterDetailing } from './character/index.vue'
-import { default as EpisodeDetailing } from './episode/index.vue'
-import { default as LocationDetailing } from './location/index.vue'
+import { default as CharacterDetailing } from './DetailingCharacter.vue'
+import { default as EpisodeDetailing } from './DetailingEpisode.vue'
+import { default as LocationDetailing } from './DetailingLocation.vue'
 
 export {
     CharacterDetailing,

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { Heart, Play } from '~/components/icons'
+import { Heart, Play } from '~/components/ui/icons'
 import { Details } from '~/components/ui/buttons'
 import { Card } from '~/components/ui'
 import { EpisodeDetailing } from '~/components/detailing'

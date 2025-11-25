@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
-import { CharacterListing, EpisodeListing, LocationListing } from '~/components/listing'
 import { Hero, PageContainer } from '~/components/ui'
+import { CharacterListing, EpisodeListing, LocationListing } from '~/components/listing'
 
 useHead({
     title: 'Home'

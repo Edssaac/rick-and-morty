@@ -1,13 +1,13 @@
 <script setup lang="ts">
 
 import { TopicHeader } from '~/components/ui'
-import LocationCard from '~/components/cards/cards/LocationCard.vue'
+import { EpisodeCard } from '~/components/cards'
 
 const { 
     fetchSelection, 
-    items: locations, 
+    items: episodes, 
     isLoading
-} = useLocations()
+} = useEpisodes()
 
 fetchSelection()
 
@@ -15,21 +15,21 @@ fetchSelection()
 
 <template>
     <section class="flex flex-wrap justify-center xl:justify-start gap-4 py-4">
-        <TopicHeader title="Localizações" action-url="/locations" />
+        <TopicHeader title="Episodios" action-url="/episodes" />
 
         <div v-if="isLoading" class="w-full text-center animate-bounce">
             Carregando...
         </div>
 
-        <div v-else-if="locations.results.length > 0" class="flex flex-wrap justify-center xl:justify-start w-full gap-4">
-            <LocationCard 
-                v-for="location of locations.results" 
-                :location="location" 
+        <div v-else-if="episodes?.results.length > 0" class="flex flex-wrap justify-center xl:justify-start w-full gap-4">
+            <EpisodeCard 
+                v-for="episode of episodes.results"
+                :episode="episode" 
             />
         </div>
 
         <div v-else class="w-full text-center">
-            Nenhuma localização encontrada.
+            Nenhum episódio encontrado.
         </div>
     </section>
 </template>

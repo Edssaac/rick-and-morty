@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { ArrowCircleUp } from '~/components/icons'
+import { ArrowCircleUp } from '~/components/ui/icons'
 
 const props = defineProps({
     modelValue: { type: Boolean, required: true }

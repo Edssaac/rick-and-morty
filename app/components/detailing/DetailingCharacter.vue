@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import { BaseModal } from '~/components/ui'
-import { Heart, GenderFemale, GenderMale, Play, Pulse, Specie } from '~/components/icons'
+import { Heart, GenderFemale, GenderMale, Play, Pulse, Specie } from '~/components/ui/icons'
 
 const props = defineProps({
     id: {

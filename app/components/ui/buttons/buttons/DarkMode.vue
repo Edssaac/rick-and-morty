@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { Moon } from '~/components/icons'
+import { Moon } from '~/components/ui/icons'
 
 const colorMode = useColorMode()
 

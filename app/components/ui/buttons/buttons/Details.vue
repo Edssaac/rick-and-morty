@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { Info } from '~/components/icons'
+import { Info } from '~/components/ui/icons'
 
 const props = defineProps({
     actionUrl: String

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import { TopicHeader } from '~/components/ui'
-import CharacterCard from '~/components/cards/cards/CharacterCard.vue'
+import { CharacterCard } from '~/components/cards'
 
 const {
     fetchSelection,
@@ -9,19 +9,13 @@ const {
     isLoading
 } = useCharacters()
 
-const {
-    getFavorites
-} = useFavorites()
-
-onMounted(() => {
-    fetchSelection(getFavorites('characters'))
-})
+fetchSelection()
 
 </script>
 
 <template>
     <section class="flex flex-wrap justify-center xl:justify-start gap-4 py-4">
-        <TopicHeader title="Personagens" action-url="/characters" :see-all="false" />
+        <TopicHeader title="Personagens" action-url="/characters" />
 
         <div v-if="isLoading" class="w-full text-center animate-bounce">
             Carregando...

@@ -1,10 +1,6 @@
 <script setup lang="ts">
 
-import { ArrowLeft, ArrowRight } from '~/components/icons'
-
-useHead({
-    title: 'Personagens'
-})
+import { ArrowLeft, ArrowRight } from '~/components/ui/icons'
 
 const props = defineProps({
     page: {

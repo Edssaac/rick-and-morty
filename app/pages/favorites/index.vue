@@ -1,10 +1,10 @@
 <script setup lang="ts">
 
-import { CharacterFavorites, EpisodeFavorites, LocationFavorites } from '~/components/favorites'
 import { PageContainer } from '~/components/ui'
+import { CharacterFavorites, EpisodeFavorites, LocationFavorites } from '~/components/favorites'
 
 useHead({
-    title: 'Home'
+    title: 'Favoritos'
 })
 
 </script>

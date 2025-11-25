@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { Heart } from '~/components/icons'
+import { Heart } from '~/components/ui/icons'
 import { PageContainer } from '~/components/ui'
 
 const router = useRouter()
